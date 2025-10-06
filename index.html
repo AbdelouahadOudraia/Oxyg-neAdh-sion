@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Association Oxygène pour l'Espoir et vie</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- En-tête -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Association Oxygène</h1>
+                <p>Pour l'Espoir et la Vie</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#adhesion">Adhésion</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Section Accueil -->
+    <section id="accueil" class="hero">
+        <div class="container">
+            <h2>Bienvenue à l'Association Oxygène</h2>
+            <p>Complexe Socio-éducatif quartier administratif, Ouarzazate</p>
+            <a href="#adhesion" class="btn">Devenir Membre</a>
+        </div>
+    </section>
+
+    <!-- Formulaire d'adhésion -->
+    <section id="adhesion" class="form-section">
+        <div class="container">
+            <h2>Fiche d'Adhésion</h2>
+            <form id="adhesionForm">
+                <!-- Informations de base -->
+                <div class="form-group">
+                    <h3>1. Informations personnelles</h3>
+                    
+                    <div class="status-selection">
+                        <label>Statut :</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="statut" value="animatrice" required> Animatrice</label>
+                            <label><input type="radio" name="statut" value="beneficiaire"> Bénéficiaire</label>
+                            <label><input type="radio" name="statut" value="membre"> Membre</label>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-column">
+                            <label for="nom">Nom :</label>
+                            <input type="text" id="nom" name="nom" required>
+                        </div>
+                        <div class="form-column">
+                            <label for="prenom">Prénom :</label>
+                            <input type="text" id="prenom" name="prenom" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-column">
+                            <label for="adresse">Adresse :</label>
+                            <input type="text" id="adresse" name="adresse" required>
+                        </div>
+                        <div class="form-column">
+                            <label for="telephone">Téléphone :</label>
+                            <input type="tel" id="telephone" name="telephone" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-column">
+                            <label for="date_naissance">Date de naissance :</label>
+                            <input type="date" id="date_naissance" name="date_naissance" required>
+                        </div>
+                        <div class="form-column">
+                            <label for="cin">N° CIN :</label>
+                            <input type="text" id="cin" name="cin" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Situation familiale -->
+                <div class="form-group">
+                    <h3>2. Situation familiale</h3>
+                    
+                    <div class="situation-familiale">
+                        <label>État civil :</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="etat_civil" value="celibataire" required> Célibataire</label>
+                            <label><input type="radio" name="etat_civil" value="mariee"> Mariée</label>
+                            <label><input type="radio" name="etat_civil" value="divorcee"> Divorcée</label>
+                            <label><input type="radio" name="etat_civil" value="veuve"> Veuve</label>
+                        </div>
+                    </div>
+
+                    <!-- Champs conditionnels -->
+                    <div id="champsConditionnels">
+                        <!-- Ces champs seront affichés dynamiquement selon l'état civil -->
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-column">
+                            <label for="avis_famille">Avis personnel sur le nouveau statut de la famille :</label>
+                            <textarea id="avis_famille" name="avis_famille" rows="3"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Connaissances et expériences -->
+                <div class="form-group">
+                    <h3>3. Connaissances et expériences</h3>
+                    
+                    <div class="form-row">
+                        <div class="form-column">
+                            <label for="niveau_etude">Niveau d'étude :</label>
+                            <input type="text" id="niveau_etude" name="niveau_etude">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-column">
+                            <label for="diplomes">Diplômes et attestations :</label>
+                            <textarea id="diplomes" name="diplomes" rows="3"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-column">
+                            <label for="profession">Profession et expérience professionnelle :</label>
+                            <textarea id="profession" name="profession" rows="3"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-column">
+                            <label for="desir_travail">Désir de travailler :</label>
+                            <textarea id="desir_travail" name="desir_travail" rows="3"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formations -->
+                <div class="form-group">
+                    <h3>4. Formation au sein de l'association</h3>
+                    
+                    <div class="formations-grid">
+                        <label><input type="checkbox" name="formations[]" value="francais"> Français</label>
+                        <label><input type="checkbox" name="formations[]" value="anglais"> Anglais</label>
+                        <label><input type="checkbox" name="formations[]" value="informatique"> Informatique</label>
+                        <label><input type="checkbox" name="formations[]" value="coupe_couture"> Coupe et couture</label>
+                        <label><input type="checkbox" name="formations[]" value="tricot"> Tricot</label>
+                        <label><input type="checkbox" name="formations[]" value="broderie"> Broderie</label>
+                        <label><input type="checkbox" name="formations[]" value="tech_hoteliere"> Tech. Hôtelière</label>
+                        <label><input type="checkbox" name="formations[]" value="esthetique"> Esthétique</label>
+                        <label><input type="checkbox" name="formations[]" value="jeremique"> Jérémique</label>
+                        <label><input type="checkbox" name="formations[]" value="peinture"> Peinture</label>
+                        <label><input type="checkbox" name="formations[]" value="ecommerce"> E-Commerce</label>
+                        <label><input type="checkbox" name="formations[]" value="coiffure"> Coiffure</label>
+                        <label><input type="checkbox" name="formations[]" value="at_juridique"> At. Juridique</label>
+                        <label><input type="checkbox" name="formations[]" value="randa"> Randa</label>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-column">
+                            <label for="groupe">Groupe :</label>
+                            <input type="text" id="groupe" name="groupe">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-column">
+                            <label for="interets">Je suis intéressé par :</label>
+                            <textarea id="interets" name="interets" rows="3"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-column">
+                            <label for="motivation">Motivation :</label>
+                            <textarea id="motivation" name="motivation" rows="3"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-column">
+                            <label for="decouverte_centre">J'ai connu le centre par :</label>
+                            <input type="text" id="decouverte_centre" name="decouverte_centre">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-column">
+                            <label for="memo">Mémo :</label>
+                            <textarea id="memo" name="memo" rows="3"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Besoins exprimés -->
+                <div class="form-group">
+                    <h3>Besoins exprimés par les bénéficiaires :</h3>
+                    <div class="form-row">
+                        <div class="form-column">
+                            <textarea id="besoins" name="besoins" rows="4" placeholder="Exprimez vos besoins..."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-submit">Soumettre la demande d'adhésion</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact</h2>
+            <div class="contact-info">
+                <p><strong>Adresse :</strong> Complexe Socio-éducatif quartier administratif, BP 408 Ouarzazate, 45000 MAROC</p>
+                <p><strong>Tél-Fax :</strong> 00 212 24883146</p>
+                <p><strong>Portable :</strong> (00 212) (0) 6.17.76.634</p>
+                <p><strong>Email :</strong> oxygenefemmes@gmail.com</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pied de page -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Association Oxygène pour l'Espoir et vie. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
